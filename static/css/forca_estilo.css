@@ -1,0 +1,128 @@
+body 
+    { 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #f8f9fa; 
+        color: #343a40; 
+        text-align: center; 
+        padding: 20px; 
+    }
+.container 
+    {
+       max-width: 1500px; 
+        margin: auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+.palavra 
+    { 
+        font-size: 3em; 
+        letter-spacing: 0.5em; 
+        margin: 30px 0; 
+        font-weight: bold; 
+        color: #1583b4; 
+    }
+.status 
+    { 
+        margin-top: 20px; 
+        padding: 10px; 
+        border-radius: 5px; 
+        font-weight: bold; 
+    }
+.erradas 
+    { 
+        color: #dc3545; 
+    }  
+.restantes 
+    { 
+        color: #1583b4; 
+    }
+.win 
+    { 
+        background-color: #d4edda; 
+        color: #155724; 
+        border: 1px solid #c3e6cb; 
+    }    
+.lose 
+    { 
+        background-color: #f8d7da; 
+        color: #721c24; 
+        border: 1px solid #f5c6cb; 
+    }
+.restart 
+    { 
+        margin-top: 20px; 
+    }      
+form
+    {
+        margin-top: 25px;
+    }
+input[type="text"] 
+    { 
+        padding: 10px; 
+        width: 50px; 
+        text-transform: uppercase; 
+        text-align: center; 
+        border: 1px solid #ced4da; 
+        border-radius: 5px; 
+    }
+button 
+    { 
+        padding: 10px 20px; 
+        background-color: #80a125; 
+        color: rgb(131, 125, 125); 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+    }
+button:hover 
+    { 
+        background-color: #abad3c; 
+        text-shadow: #0d151c;
+        color: #c3e6cb;
+    }
+.restart 
+    a 
+    { 
+        text-decoration: none; 
+        padding: 10px 20px; 
+        background-color: #0d151c; 
+        color: rgb(232, 229, 229); 
+        border-radius: 5px; 
+        display: inline-block; 
+    }
+.game-area 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        gap: 40px; 
+        margin-top: 30px;
+        width: 100%;
+    }
+.hangman-display 
+    {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        min-width: 300px; 
+    }
+.hangman-image 
+    {
+        width: auto; 
+        height: 250px; 
+        max-width: 100%; 
+        object-fit: contain; 
+    }
+.game-info 
+    {
+        flex: 1;
+        text-align: center;
+        min-width: 350px;   
+    }

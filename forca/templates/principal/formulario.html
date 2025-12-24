@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Projeto 3</title>
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Preencha o Formulario</h1>
+        <form action="{% url "recebe_dados" %}" method="post">
+            {% csrf_token %}       
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" name="nome_do_usuario">
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>

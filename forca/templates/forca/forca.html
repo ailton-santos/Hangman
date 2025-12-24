@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="{% static 'css/forca_estilo.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Forca 🐿️ </h1>
+
+        {% if jogo_terminado %}
+            <p class="status {% if 'VENCEU' in mensagem %}win{% else %}lose{% endif %}">{{ mensagem }}</p>
+        {% else %}
+            <p class="status">{{ mensagem }}</p>
+        {% endif %}
+        
+        <div class="game-area"> 
+            <div class="game-info">
+                <p class="palavra">{{ palavra_mascarada }}</p>
+
+                <p class="restantes">Tentativas restantes: <span>{{ tentativas_restantes }}</span> / {{ max_tentativas }}</p>
+                <p class="erradas">Letras erradas: <span>{{ letras_erradas }}</span></p>
+
+                {% if not jogo_terminado %}
+                    <form method="post" action="{% url 'jogar_forca' %}">
+                        {% csrf_token %}
+                        <label for="letra">Digite uma letra:</label>
+                        <div class="input-group"> {# Nova div para input e botão #}
+                            <input type="text" id="letra" name="letra" maxlength="1" required autofocus>
+                            <button type="submit">Tentar</button>
+                        </div>
+                    </form>
+                {% endif %}
+            </div>
+
+            <div class="hangman-display"> {# Div para a imagem da forca #}
+                <img src="{% static 'img/' %}{{ nome_imagem_forca }}" alt="Forca" class="hangman-image">
+            </div>
+        </div>
+
+        <div class="restart">
+            <a href="{% url 'iniciar_jogo' %}">Reiniciar Jogo</a>
+        </div>
+    </div>
+</body>
+</html>
